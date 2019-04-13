@@ -12,6 +12,8 @@ body {
 }
 .titulo{
   font-family: "DeterminationMonoWeb", "Roboto", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .youtube {
   margin: 10px;
