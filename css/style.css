@@ -4,3 +4,21 @@ body {
   color: white;
   font-family: 'Roboto', sans-serif;
 }
+.youtube {
+  margin: 10px;
+  /* width: 100%; */
+  max-width: 100%;
+}
+.winner {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.update {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+#turno {
+  margin-top: 10px;
+}
