@@ -3,57 +3,63 @@ function randomNumberInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-let nuez = { nombre: "Nuez", vida: 100, ataque: randomNumberInt(1, 50) };
-let cheto = { nombre: "Cheto", vida: 100, ataque: randomNumberInt(1, 50) };
-let ganador;
+let p1 = { nombre: "Nuez", vida: 100, ataque: randomNumberInt(1, 50) };
+let p2 = { nombre: "Cheto", vida: 100, ataque: randomNumberInt(1, 50) };
 let turno = randomNumberInt(0, 1);
+let ganador;
+let perdedor;
 
-//document.getElementById("nuez").textContent = (nuez.nombre+" tiene "+nuez.vida + "HP y "+nuez.ataque+" PTS de ataque." );
-//document.getElementById("cheto").textContent = (cheto.nombre+" tiene "+cheto.vida + "HP y "+cheto.ataque+" PTS de ataque." );
+document.getElementById("vs").textContent = (p2.nombre + " v " + p1.nombre);
 
 if (turno == 1) {
-  document.getElementById("turno").textContent = (cheto.nombre + " tiene " + cheto.vida + "HP y " + cheto.ataque + " PTS de ataque.");
+  document.getElementById("turno").textContent = (p2.nombre + " tiene " + p2.vida + "HP y " + p2.ataque + " PTS de ataque.");
   let divturno = document.createElement("P");
-  divturno.innerHTML = nuez.nombre + " tiene " + nuez.vida + "HP y " + nuez.ataque + " PTS de ataque.";
+  divturno.innerHTML = p1.nombre + " tiene " + p1.vida + "HP y " + p1.ataque + " PTS de ataque.";
   divturno.setAttribute("class", "update");
   document.getElementById("turno").appendChild(divturno);
 } else {
   if (turno == 0) {
-    document.getElementById("turno").textContent = (nuez.nombre + " tiene " + nuez.vida + "HP y " + nuez.ataque + " PTS de ataque.");
+    document.getElementById("turno").textContent = (p1.nombre + " tiene " + p1.vida + "HP y " + p1.ataque + " PTS de ataque.");
     let divturno = document.createElement("P");
-    divturno.innerHTML = cheto.nombre + " tiene " + cheto.vida + "HP y " + cheto.ataque + " PTS de ataque.";
+    divturno.innerHTML = p2.nombre + " tiene " + p2.vida + "HP y " + p2.ataque + " PTS de ataque.";
     divturno.setAttribute("class", "update");
     document.getElementById("turno").appendChild(divturno);
   }
 }
 
-while (nuez.vida > 0 && cheto.vida > 0) {
+while (p1.vida > 0 && p2.vida > 0) {
   if (turno == 1) {
-    cheto.vida = cheto.vida - nuez.ataque;
+    p2.vida = p2.vida - p1.ataque;
     turno = 0;
     let divappend = document.createElement("P");
-    divappend.innerHTML = cheto.nombre + " tiene " + cheto.vida + "HP y " + cheto.ataque + " PTS de ataque.";
+    divappend.innerHTML = p2.nombre + " tiene " + p2.vida + "HP y " + p2.ataque + " PTS de ataque.";
     divappend.setAttribute("class", "update");
     document.getElementById("append").appendChild(divappend);
-    cheto.ataque = (randomNumberInt(1, 50));
+    p2.ataque = (randomNumberInt(1, 50));
   } else {
     if (turno == 0) {
-      nuez.vida = nuez.vida - cheto.ataque;
+      p1.vida = p1.vida - p2.ataque;
       turno = 1;
       let divappend = document.createElement("P");
-      divappend.innerHTML = nuez.nombre + " tiene " + nuez.vida + "HP y " + nuez.ataque + " PTS de ataque.";
+      divappend.innerHTML = p1.nombre + " tiene " + p1.vida + "HP y " + p1.ataque + " PTS de ataque.";
       divappend.setAttribute("class", "update");
       document.getElementById("append").appendChild(divappend);
-      nuez.ataque = (randomNumberInt(1, 50));
+      p1.ataque = (randomNumberInt(1, 50));
     }
   }
 }
-if (nuez.vida <= 0) {
-  ganador = "Cheto";
+if (p1.vida <= 0) {
+  ganador = p2.nombre;
   document.getElementById("winner").textContent = ganador + " wins!";
+  perdedor = p1.nombre;
 } else {
-  if (cheto.vida <= 0) {
-    ganador = "Nuez";
+  if (p2.vida <= 0) {
+    ganador = p1.nombre;
     document.getElementById("winner").textContent = ganador + " wins!";
+    perdedor = p1.nombre;
   }
 }
+let divlooser = document.createElement("P");
+divlooser.innerHTML = (perdedor + " ha perdido");
+divlooser.setAttribute("class", "perdedor");
+document.getElementById("perdedor").appendChild(divlooser);
