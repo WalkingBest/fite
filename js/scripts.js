@@ -97,5 +97,5 @@ divlooser.setAttribute("class", "perdedor");
 document.getElementById("perdedor").appendChild(divlooser);
 
 function typeWriter() {
-  document.getElementById("subtitle").setAttribute("class", "typewriter");
+  document.getElementById("subtitle").setAttribute("class", "typewriter subtitulo");
 }

@@ -12,6 +12,7 @@
 .subtitulo {
   font-family: "DeterminationMonoWeb", "Roboto", sans-serif;
   visibility: hidden;
+  max-width: 100%;
 }
 .typewriter {
   visibility: visible;
