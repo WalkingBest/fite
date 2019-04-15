@@ -3,6 +3,32 @@ function randomNumberInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+// Youtube
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    width: '560',
+    height: '315',
+    videoId: 'cPCLFtxpadE',
+    playerVars: { 'autoplay': 1, 'controls': 0 },
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  event.target.setVolume(100);
+  event.target.playVideo();
+  typeWriter();
+}
+// Youtube Ends
 let p1 = { nombre: "Nuez", vida: 100, ataque: randomNumberInt(1, 50) };
 let p2 = { nombre: "Cheto", vida: 100, ataque: randomNumberInt(1, 50) };
 let turno = randomNumberInt(0, 1);
@@ -12,14 +38,20 @@ let perdedor;
 document.getElementById("vs").textContent = (p2.nombre + " v " + p1.nombre);
 
 if (turno == 1) {
-  document.getElementById("turno").textContent = (p2.nombre + " tiene " + p2.vida + "HP y " + p2.ataque + " PTS de ataque.");
+  let turno1 = document.createElement("P");
+  turno1.innerHTML = (p2.nombre + " tiene " + p2.vida + "HP y " + p2.ataque + " PTS de ataque.");
+  turno1.setAttribute("class", "update");
+  document.getElementById("turno").appendChild(turno1)
   let divturno = document.createElement("P");
   divturno.innerHTML = p1.nombre + " tiene " + p1.vida + "HP y " + p1.ataque + " PTS de ataque.";
   divturno.setAttribute("class", "update");
   document.getElementById("turno").appendChild(divturno);
 } else {
   if (turno == 0) {
-    document.getElementById("turno").textContent = (p1.nombre + " tiene " + p1.vida + "HP y " + p1.ataque + " PTS de ataque.");
+    let turno0 = document.createElement("P");
+    turno0.innerHTML = (p1.nombre + " tiene " + p1.vida + "HP y " + p1.ataque + " PTS de ataque.");
+    turno0.setAttribute("class", "update");
+    document.getElementById("turno").appendChild(turno0);
     let divturno = document.createElement("P");
     divturno.innerHTML = p2.nombre + " tiene " + p2.vida + "HP y " + p2.ataque + " PTS de ataque.";
     divturno.setAttribute("class", "update");
@@ -64,24 +96,6 @@ divlooser.innerHTML = (perdedor + " ha perdido");
 divlooser.setAttribute("class", "perdedor");
 document.getElementById("perdedor").appendChild(divlooser);
 
-var tag = document.createElement("script");
-
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName("script")[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var player;
-function onYoutubeIframeAPIReady() {
-  player = new YT.Player("player", {
-    height: "560",
-    width: "315",
-    videoId: "cPCLFtxpadE",
-    events: {
-      "onReady": onPlayerReady,
-      "onStateChange": onPlayerStateChange
-    }
-  });
-}
-function onPlayerReady(event){
-  event.target.playVideo();
+function typeWriter() {
+  document.getElementById("subtitle").setAttribute("class", "typewriter");
 }
