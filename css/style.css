@@ -26,9 +26,7 @@
 @keyframes type{
   from {width: 0;}
 }
-.youtube {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.player {
   max-width: 100%;
   display: block;
   margin: 0 auto;
