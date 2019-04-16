@@ -5,14 +5,15 @@
   src: local("DeterminationMonoWeb"), local("DeterminationMonoWeb"), url(../fonts/DeterminationMonoWeb.woff) format("woff");
 }
 .vs{
-  font-family: "DeterminationMonoWeb", "Roboto", sans-serif;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: normal;
 }
 .subtitulo {
   font-family: "DeterminationMonoWeb", "Roboto", sans-serif;
   visibility: hidden;
   max-width: 100%;
+  font-weight: normal;
 }
 .typewriter {
   visibility: visible;
@@ -33,7 +34,6 @@
   margin: 0 auto;
 }
 .winner {
-  font-family: "DeterminationMonoWeb", "Roboto", sans-serif;
   font-size: 12pt;
   margin-top: 10px;
   margin-bottom: 20px; 
