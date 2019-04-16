@@ -98,4 +98,5 @@ document.getElementById("perdedor").appendChild(divlooser);
 
 function typeWriter() {
   document.getElementById("subtitle").setAttribute("class", "typewriter subtitulo");
+  document.getElementById("subtitle").innerHTML = "The ultimate battle begins."
 }
