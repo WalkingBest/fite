@@ -16,7 +16,7 @@ function onYouTubeIframeAPIReady() {
     width: '560',
     height: '315',
     videoId: 'cPCLFtxpadE',
-    playerVars: { 'autoplay': 1, 'controls': 0, 't': 30},
+    playerVars: { 'autoplay': 1, 'controls': 0, 'start': 30},
     events: {
       'onReady': onPlayerReady
     }
