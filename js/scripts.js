@@ -88,7 +88,7 @@ if (p1.vida <= 0) {
   if (p2.vida <= 0) {
     ganador = p1.nombre;
     document.getElementById("winner").textContent = ganador + " wins!";
-    perdedor = p1.nombre;
+    perdedor = p2.nombre;
   }
 }
 let divlooser = document.createElement("P");
