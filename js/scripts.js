@@ -30,7 +30,7 @@ function onPlayerReady(event) {
 }
 // Youtube Ends
 let p1 = { nombre: "Nuez", vida: 100, ataque: randomNumberInt(1, 50) };
-let p2 = { nombre: "Cheto", vida: 100, ataque: randomNumberInt(1, 50) };
+let p2 = { nombre: "Adjeg", vida: 100, ataque: randomNumberInt(1, 50) };
 let turno = randomNumberInt(0, 1);
 let ganador;
 let perdedor;
