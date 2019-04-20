@@ -100,3 +100,8 @@ function typeWriter() {
   document.getElementById("subtitle").setAttribute("class", "typewriter subtitulo");
   document.getElementById("subtitle").innerHTML = "The ultimate battle begins."
 }
+document.getElementById("subtitle").addEventListener("animationend", typeWriter2,false)
+
+function typeWriter2() {
+  document.getElementById("winner").classList.add("typewriter2")
+}

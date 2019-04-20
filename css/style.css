@@ -34,9 +34,24 @@
   margin: 0 auto;
 }
 .winner {
+  visibility: hidden;
+  max-width: 100%;
   font-size: 12pt;
   margin-top: 10px;
   margin-bottom: 20px; 
+}
+.typewriter2 {
+  visibility: visible;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 4s steps(60, end);
+}
+@keyframes type{
+  from {width: 0;}
 }
 .update {
   font-family: monospace;
