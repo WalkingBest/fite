@@ -32,6 +32,7 @@
   max-width: 100%;
   display: block;
   margin: 0 auto;
+  /* visibility: hidden; */
 }
 .winner {
   visibility: hidden;
@@ -64,3 +65,4 @@
 #turno {
   margin-top: 20px;
 }
+

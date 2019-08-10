@@ -4,6 +4,9 @@ function randomNumberInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 // Youtube
+
+function ytPapu(){
+
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -11,7 +14,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
-function onYouTubeIframeAPIReady() {
+window.onYouTubeIframeAPIReady = function () {
   player = new YT.Player('player', {
     width: '560',
     height: '315',
@@ -28,12 +31,17 @@ function onPlayerReady(event) {
   event.target.playVideo();
   typeWriter();
 }
+}
 // Youtube Ends
-let p1 = { nombre: "Kiraster", vida: 100, ataque: randomNumberInt(1, 50) };
-let p2 = { nombre: "Nuez", vida: 100, ataque: randomNumberInt(1, 50) };
-let turno = randomNumberInt(0, 1);
+let p1 = { nombre: "", vida: 100, ataque: randomNumberInt(1, 50) };
+let p2 = { nombre: "", vida: 100, ataque: randomNumberInt(1, 50) };
+function getValue(){
+ p1.nombre = document.getElementById("player1").value;
+ p2.nombre = document.getElementById("player2").value;
+ let turno = randomNumberInt(0, 1);
 let ganador;
 let perdedor;
+ytPapu();
 
 document.getElementById("vs").textContent = (p2.nombre + " v " + p1.nombre);
 
@@ -96,6 +104,8 @@ divlooser.innerHTML = (perdedor + " ha perdido");
 divlooser.setAttribute("class", "perdedor");
 document.getElementById("perdedor").appendChild(divlooser);
 
+
+}
 function typeWriter() {
   document.getElementById("subtitle").setAttribute("class", "typewriter subtitulo");
   document.getElementById("subtitle").innerHTML = "The ultimate battle begins."
