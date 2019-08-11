@@ -4,7 +4,23 @@
   font-weight: 400;
   src: local("DeterminationMonoWeb"), local("DeterminationMonoWeb"), url(../fonts/DeterminationMonoWeb.woff) format("woff");
 }
+#dummy {
+  display: none;
+}
+.input {
+  margin-top: 10px;
+}
+.input1, .input2 {
+  text-align: center;
+}
+.boton {
+  margin: 0 auto;
+  margin-top: 10px;
+}
 .vs{
+  position: relative;
+  display: inline;
+  justify-content: center;
   margin-top: 10px;
   margin-bottom: 10px;
   font-weight: normal;
@@ -32,7 +48,6 @@
   max-width: 100%;
   display: block;
   margin: 0 auto;
-  /* visibility: hidden; */
 }
 .winner {
   visibility: hidden;
@@ -65,4 +80,3 @@
 #turno {
   margin-top: 20px;
 }
-
