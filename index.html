@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es_mx">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -14,27 +14,37 @@
 <body>
   <iframe name="dummy" id="dummy"></iframe>
   <div class="input">
-
-    <form target="dummy" autocomplete="off" onsubmit="getValue()" id="form">
+    <form target="dummy" autocomplete="off" onsubmit="startFite()" id="form">
       <input title="Insert player 1 name" class="input1" type="text" id="player1" value="" placeholder="Player 1"
-        required class="p1" autofocus>
+        required autofocus>
       <input title="Insert player 2 name" class="input2" type="text" id="player2" value="" placeholder="Player 2"
-        required class="p2">
-
-  </div>
-  <button type="submit" class="boton" id="boton">Fite!</button>
-  <div>
+        required>
+      <button type="submit" class="boton" id="boton">Fite!</button>
     </form>
-    <h1 id="vs" class="vs"></h1>
-    <h2 id="subtitle"></h2>
-    <p class="winner" id="winner"></p>
-    <div id="player"></div>
+  </div>
+
+  <main class="vscontainer">
+    <div class="p1container">
+      <h1 id="h1p1"></h1>
+    </div>
+    <div class="vs">
+      <h1 id="vs"></h1>
+    </div>
+    <div class="p2container">
+      <h1 id="h1p2"></h1>
+    </div>
+  </main>
+
+  <h2 id="subtitle"></h2>
+  <p class="winner" id="winner"></p>
+  <div id="ytplayer"></div>
+  <div lang="es">
     <div id="turno"></div>
     <div id="append"></div>
     <div id="perdedor"></div>
-
+  </div>
+  <div id="prueba"></div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/scripts.js"></script>
 
 </html>

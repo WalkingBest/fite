@@ -4,33 +4,81 @@
   font-weight: 400;
   src: local("DeterminationMonoWeb"), local("DeterminationMonoWeb"), url(../fonts/DeterminationMonoWeb.woff) format("woff");
 }
+
 #dummy {
   display: none;
 }
+
 .input {
   margin-top: 10px;
 }
+
 .input1, .input2 {
   text-align: center;
+  outline: 0;
 }
+
 .boton {
-  margin: 0 auto;
-  margin-top: 10px;
+  display: block;
+  margin: 10px auto 0;
+  /* margin-top: 10px; */
+  /* margin */
 }
-.vs{
-  position: relative;
-  display: inline;
+
+.vscontainer {
+  display: flex;
   justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  /* margin: 0 0 0 0; */
+  /* align-items: center; */
+  /* display: inline;
+  position: relative;
+  padding: 1em 10em 1em 10em; */
+  /* margin: 10px 0 10px 0; */
+}
+
+/* .p1container, .p2container {
+  position: absolute;
+  display: inherit;
+} */
+
+/* .p1container {
+  background: red;
+  top: 0;
+  bottom: 0;
+  left: 0;
+} */
+
+#h1p1, #h1p2, #vs {
+  margin: 10px 0 10px 0;
   font-weight: normal;
 }
+
+/* .p2container {
+  background: blue;
+  top: 0;
+  bottom: 0;
+  right: 0;
+} */
+
+.vs {
+  /* position: inherit;
+  display: inherit;
+ 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: normal; */
+  margin-left: 15px;
+  justify-content: center;
+  margin-right: 15px;
+}
+
 .subtitulo {
   font-family: "DeterminationMonoWeb", "Roboto", sans-serif;
   visibility: hidden;
   max-width: 100%;
   font-weight: normal;
 }
+
 .typewriter {
   visibility: visible;
   margin: 0 auto;
@@ -41,21 +89,27 @@
   width: 30em;
   animation: type 4s steps(60, end);
 }
-@keyframes type{
-  from {width: 0;}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
 }
+
 #player {
   max-width: 100%;
   display: block;
   margin: 0 auto;
 }
+
 .winner {
   visibility: hidden;
   max-width: 100%;
   font-size: 12pt;
   margin-top: 10px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
+
 .typewriter2 {
   visibility: visible;
   margin: 0 auto;
@@ -66,17 +120,23 @@
   width: 30em;
   animation: type 4s steps(60, end);
 }
-@keyframes type{
-  from {width: 0;}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
 }
+
 .update {
   font-family: monospace;
   font-size: 1em;
 }
+
 .perdedor {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 #turno {
   margin-top: 20px;
 }
