@@ -9,33 +9,34 @@ function randomNumberInt(min, max) {
 }
 // Descarga la api de youtube y construye el reproductor
 /* exported player */
-function ytPapu() {
-	const tag = document.createElement('script');
-	tag.src = 'https://www.youtube.com/iframe_api';
-	const firstScriptTag = document.getElementsByTagName('script')[0];
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-	// eslint-disable-next-line no-var
-	var player;
-	window.onYouTubeIframeAPIReady = function() {
-		// eslint-disable-next-line no-undef
-		player = new YT.Player('player', {
-			width: '560',
-			height: '315',
-			videoId: 'cPCLFtxpadE',
-			playerVars: { autoplay: 1, controls: 0, start: 30 },
-			events: {
-				onReady: onPlayerReady
-			}
-		});
-	};
+// function ytPapu() {
+// 	const tag = document.createElement('script');
+// 	tag.src = 'https://www.youtube.com/iframe_api';
+// 	const firstScriptTag = document.getElementsByTagName('script')[0];
+// 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// 	// eslint-disable-next-line no-var
+// 	var player;
+// 	window.onYouTubeIframeAPIReady = function() {
+// 		// eslint-disable-next-line no-undef
+// 		player = new YT.Player('player', {
+// 			width: '560',
+// 			height: '315',
+// 			videoId: 'cPCLFtxpadE',
+// 			playerVars: { autoplay: 1, controls: 0, start: 30 },
+// 			events: {
+// 				onReady: onPlayerReady
+// 			}
+// 		});
+// 	};
 
-	function onPlayerReady(event) {
-		event.target.setVolume(100);
-		event.target.playVideo();
-		typeWriter();
-		// Invoca funcion al cargar el reproductor
-	}
-}
+// 	function onPlayerReady(event) {
+// 		event.target.setVolume(100);
+// 		event.target.playVideo();
+// 		typeWriter();
+// 		// Invoca funcion al cargar el reproductor
+// 	}
+// }
+
 // Crea un parrafo, agrega clase y lo hace hijo de un div
 function createUpdate(div, name, hp, attack) {
 	const p = document.createElement('P');
@@ -66,7 +67,9 @@ function startFite() {
 	let ganador;
 	let perdedor;
 	let turno;
-	ytPapu();
+	// ytPapu();
+	document.getElementById('player').style.visibility = 'visible';
+	typeWriter();
 	document.querySelectorAll('.update, .perdedor').forEach((e) => e.parentNode.removeChild(e));
 	document.getElementById('form').reset();
 	document.getElementById('player1').focus();

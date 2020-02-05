@@ -99,6 +99,7 @@
 #player {
   max-width: 100%;
   display: block;
+  visibility: hidden;
   margin: 0 auto;
 }
 
